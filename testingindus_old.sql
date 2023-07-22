@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 22, 2023 at 05:26 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.24
+-- Host: localhost
+-- Generation Time: Jul 20, 2023 at 08:32 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `freelancing_indus-couries_db`
+-- Database: `testingindus`
 --
 
 -- --------------------------------------------------------
@@ -971,16 +971,15 @@ CREATE TABLE `orders` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `state_price` double DEFAULT 0,
-  `state` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `shiprocket_response_order_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
+  `state` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `user_id`, `cart`, `currency_sign`, `currency_value`, `discount`, `shipping`, `payment_method`, `txnid`, `tax`, `charge_id`, `transaction_number`, `order_status`, `shipping_info`, `billing_info`, `payment_status`, `created_at`, `updated_at`, `state_price`, `state`, `shiprocket_response_order_id`) VALUES
-(5, 11, '{\"7-\":{\"options_id\":[],\"attribute\":{\"names\":[],\"option_name\":[],\"option_price\":[]},\"attribute_price\":0,\"name\":\"Analog TimesQuartz Watch (A-101 Silver Case Black Dial)\",\"slug\":\"analog-watch-a-101-silver-case-black-dial\",\"qty\":\"1\",\"price\":1899,\"main_price\":1899,\"photo\":\"16890504681.png\",\"type\":\"normal\",\"item_type\":\"normal\",\"item_l_n\":null,\"item_l_k\":null}}', '₹', '1', '[]', '{\"id\":7,\"title\":\"Delivery Charge\",\"price\":120,\"minimum_price\":0,\"is_condition\":0,\"status\":1,\"created_at\":null,\"updated_at\":null}', 'Cash On Delivery', NULL, 0, NULL, 'SlAzIM2PaG', 'Canceled', '{\"ship_first_name\":\"Vicky\",\"ship_last_name\":\"Kumar\",\"ship_email\":\"info@fff.com\",\"ship_phone\":\"9304893084\",\"ship_address1\":\"Infront ofMarket, Kumhrar, Patna, Bihar 800026\",\"ship_address2\":\"fasfd\",\"ship_zip\":\"800026\",\"ship_city\":\"Patna\"}', '{\"_token\":\"YDCx7JESKdlNCesIb1hrUm3SpBK9XYTH0UW1jAEI\",\"bill_first_name\":\"Vicky\",\"bill_last_name\":\"Kumar\",\"bill_email\":\"info@kkk.com\",\"bill_phone\":\"9304893084\",\"bill_address1\":\"Infront of Prince Travelware, Building No.-159, Patna, Bihar 800026\",\"bill_address2\":\"fasfd\",\"bill_zip\":\"800026\",\"bill_city\":\"Patna\",\"same_ship_address\":\"on\"}', 'Unpaid', '2023-07-19 23:40:06', '2023-07-22 10:02:18', 0, NULL, '378281555');
+INSERT INTO `orders` (`id`, `user_id`, `cart`, `currency_sign`, `currency_value`, `discount`, `shipping`, `payment_method`, `txnid`, `tax`, `charge_id`, `transaction_number`, `order_status`, `shipping_info`, `billing_info`, `payment_status`, `created_at`, `updated_at`, `state_price`, `state`) VALUES
+(1, 11, '{\"7-\":{\"options_id\":[],\"attribute\":{\"names\":[],\"option_name\":[],\"option_price\":[]},\"attribute_price\":0,\"name\":\"Analog TimesQuartz Watch (A-101 Silver Case Black Dial)\",\"slug\":\"analog-watch-a-101-silver-case-black-dial\",\"qty\":\"1\",\"price\":1899,\"main_price\":1899,\"photo\":\"16890504681.png\",\"type\":\"normal\",\"item_type\":\"normal\",\"item_l_n\":null,\"item_l_k\":null}}', '₹', '1', '[]', '{\"id\":7,\"title\":\"Delivery Charge\",\"price\":120,\"minimum_price\":0,\"is_condition\":0,\"status\":1,\"created_at\":null,\"updated_at\":null}', 'Cash On Delivery', NULL, 0, NULL, 'SlAzIM2PaG', 'Pending', '{\"ship_first_name\":\"Vicky\",\"ship_last_name\":\"Kumar\",\"ship_email\":\"info@fff.com\",\"ship_phone\":\"4758478787\",\"ship_address1\":\"Infront ofMarket, Kumhrar, Patna, Bihar 800026\",\"ship_address2\":\"fasfd\",\"ship_zip\":\"800026\",\"ship_city\":\"Patna\"}', '{\"_token\":\"YDCx7JESKdlNCesIb1hrUm3SpBK9XYTH0UW1jAEI\",\"bill_first_name\":\"Vicky\",\"bill_last_name\":\"Kumar\",\"bill_email\":\"info@kkk.com\",\"bill_phone\":\"4578\",\"bill_address1\":\"Infront of Prince Travelware, Building No.-159, Patna, Bihar 800026\",\"bill_address2\":\"fasfd\",\"bill_zip\":\"800026\",\"bill_city\":\"Patna\",\"same_ship_address\":\"on\"}', 'Unpaid', '2023-07-19 23:40:06', '2023-07-19 23:40:06', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -1533,21 +1532,7 @@ INSERT INTO `track_orders` (`id`, `order_id`, `title`, `created_at`, `updated_at
 (187, 30, 'Pending', '2021-09-18 08:44:06', '2021-09-18 08:44:06'),
 (320, 133, 'Pending', '2023-04-07 06:19:32', '2023-04-07 06:19:32'),
 (321, 134, 'Pending', '2023-04-07 21:10:12', '2023-04-07 21:10:12'),
-(325, 1, 'In Progress', '2023-07-22 06:31:21', '2023-07-22 06:31:21'),
-(326, 1, 'Delivered', '2023-07-22 06:31:21', '2023-07-22 06:31:21'),
-(327, 1, 'Canceled', '2023-07-22 06:31:21', '2023-07-22 06:31:21'),
-(328, 2, 'In Progress', '2023-07-22 06:32:59', '2023-07-22 06:32:59'),
-(329, 2, 'Delivered', '2023-07-22 06:38:42', '2023-07-22 06:38:42'),
-(330, 2, 'Canceled', '2023-07-22 06:38:42', '2023-07-22 06:38:42'),
-(331, 3, 'In Progress', '2023-07-22 06:53:49', '2023-07-22 06:53:49'),
-(332, 3, 'Delivered', '2023-07-22 06:54:07', '2023-07-22 06:54:07'),
-(333, 3, 'Canceled', '2023-07-22 06:54:07', '2023-07-22 06:54:07'),
-(334, 4, 'In Progress', '2023-07-22 09:43:15', '2023-07-22 09:43:15'),
-(335, 4, 'Delivered', '2023-07-22 09:46:17', '2023-07-22 09:46:17'),
-(336, 4, 'Canceled', '2023-07-22 09:46:17', '2023-07-22 09:46:17'),
-(337, 5, 'In Progress', '2023-07-22 10:00:55', '2023-07-22 10:00:55'),
-(338, 5, 'Delivered', '2023-07-22 10:02:19', '2023-07-22 10:02:19'),
-(339, 5, 'Canceled', '2023-07-22 10:02:19', '2023-07-22 10:02:19');
+(322, 1, 'Pending', '2023-07-19 23:40:06', '2023-07-19 23:40:06');
 
 -- --------------------------------------------------------
 
@@ -2051,7 +2036,7 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pages`
@@ -2165,7 +2150,7 @@ ALTER TABLE `tickets`
 -- AUTO_INCREMENT for table `track_orders`
 --
 ALTER TABLE `track_orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=340;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=323;
 
 --
 -- AUTO_INCREMENT for table `transactions`

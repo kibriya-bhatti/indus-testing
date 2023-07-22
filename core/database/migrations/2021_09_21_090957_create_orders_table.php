@@ -30,6 +30,7 @@ class CreateOrdersTable extends Migration
             $table->text('shipping_info')->nullable();
             $table->text('billing_info')->nullable();
             $table->string('payment_status')->nullable();
+            $table->string("shiprocket_response_order_id")->nullable();
             $table->timestamps();
         });
     }
